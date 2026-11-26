@@ -181,6 +181,22 @@ POSTS = [
       caption="Los 3 signos con más suerte en 2027 🍀✨ Comenta “yo” si eres uno 👇\n\n#leo #sagitario #aries #2027 "),
 ]
 
+POSTS.append(dict(id="m21", date="2026-12-30", kind="meme",
+      hook="Tu cábala del 31 según tu signo",
+      items=weekly(["Recibe el año saltando con el pie derecho (y gritando)",
+                    "Lentejas en el bolsillo: la plata no se toca",
+                    "Doce uvas y doce deseos… y pide uno extra",
+                    "Barre la casa hacia afuera para sacar lo malo",
+                    "Calzones dorados: brillar también es cábala",
+                    "Limpia la casa entera antes de las 12. Obvio.",
+                    "Anillo de oro en la copa para el amor",
+                    "Calzones rojos, ya sabes por qué",
+                    "Maleta a la cuadra, sí o sí",
+                    "Billete en el zapato toda la noche",
+                    "Hace TODAS las cábalas, por si acaso",
+                    "Escribe lo que suelta en un papel y lo quema"]),
+      caption="Tu cábala de Año Nuevo según tu signo 🥂🧳 Desliza 👉 Guárdalo 📌 y mándaselo a quien pasa el 31 contigo 👇 ¿Cuál vas a hacer tú?\n\n#añonuevo #cabalas #2027 "))
+
 for p in POSTS:
     p["caption"] = p["caption"] + TAGS + "\n\nSíguenos en @horospococl para tu horóscopo diario 🔮"
 
