@@ -4,7 +4,7 @@ Uso: python3 render.py [id ...]   (sin argumentos genera todo)
 import os, sys, math, subprocess, hashlib
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
-from content import POSTS, SIGNS, SYM
+from content import POSTS_ALL as POSTS, SIGNS, SYM
 
 W, H, FPS, SR = 1080, 1920, 30, 44100
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

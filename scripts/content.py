@@ -183,3 +183,28 @@ POSTS = [
 
 for p in POSTS:
     p["caption"] = p["caption"] + TAGS + "\n\nSíguenos en @horospococl para tu horóscopo diario 🔮"
+
+# Serie de compatibilidades (dic 2026 - ene 2027)
+_C = [
+ ("c01", "2026-12-03", "Escorpio", "Leo", "Química explosiva: se miran y arde todo", "Los dos quieren tener la última palabra", "Intenso, celoso y adictivo. Puro drama, pura pasión."),
+ ("c02", "2026-12-10", "Géminis", "Sagitario", "Nunca se aburren: siempre hay un plan nuevo", "Ninguno de los dos contesta el WhatsApp", "Funciona… pero nunca van a llegar a la hora"),
+ ("c03", "2026-12-17", "Cáncer", "Capricornio", "Cáncer pone el cariño, Capricornio la estabilidad", "Cáncer quiere hablar de sentimientos. Capricornio está en una reunión.", "Pareja de casa propia y perro a los 3 años"),
+ ("c04", "2026-12-26", "Tauro", "Virgo", "Rutina perfecta: comida rica y todo ordenado", "Virgo critica, Tauro se pone porfiado/a", "De las parejas más estables del zodiaco"),
+ ("c05", "2027-01-03", "Piscis", "Acuario", "Dos soñadores con ideas que nadie más entiende", "Piscis siente todo. Acuario analiza todo.", "Rara, pero bonita. Como película indie."),
+ ("c06", "2027-01-07", "Aries", "Leo", "Pura energía: viven la vida a mil", "Dos egos en la misma pieza", "Funciona si se turnan para ser protagonistas"),
+ ("c07", "2027-01-10", "Libra", "Géminis", "Conversaciones infinitas y carretes épicos", "Nadie decide dónde comer. Nunca.", "Funciona si uno de los dos aprende a decidir"),
+ ("c08", "2027-01-14", "Escorpio", "Piscis", "Conexión casi telepática", "Mucha intensidad, muchas lágrimas", "Almas gemelas nivel teleserie turca"),
+]
+_TAGMAP = {"Géminis": "geminis", "Cáncer": "cancer"}
+COMPAT = []
+for cid, d, a, b, good, bad, ver in _C:
+    ta, tb = _TAGMAP.get(a, a.lower()), _TAGMAP.get(b, b.lower())
+    COMPAT.append(dict(
+        id=cid, date=d, kind="compat", pair=(a, b),
+        hook=f"{a} + {b}: ¿amor o desastre?",
+        items=[("Lo bueno", good), ("Lo malo", bad), ("Veredicto", ver)],
+        cta=f"Etiqueta a tu {a} o a tu {b}",
+        caption=(f"{a} {SYM[a]} + {b} {SYM[b]}: ¿amor o desastre? 💘 Etiqueta a tu pareja y comenten qué signos son 👇 "
+                 f"¿Qué combinación analizamos la próxima semana?\n\n#{ta} #{tb} #compatibilidad #compatibilidadzodiacal "
+                 + TAGS + "\n\nSíguenos en @horospococl para tu horóscopo diario 🔮")))
+POSTS_ALL = POSTS + COMPAT
